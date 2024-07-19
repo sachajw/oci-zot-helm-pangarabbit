@@ -11,5 +11,8 @@ spec:
     - match: Host(`zot.pangarabbit.com`)
       kind: Rule
       services:
-        - name: api@internal
-          kind: TraefikService
+        - name: zot
+          namespace: zot
+          port: 5000
+  # tls:
+  #   certResolver: default
