@@ -16,7 +16,7 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 service:
-  type: NodePort
+  type: ClusterIP
   port: 5000
   nodePort: null # Set to a specific port if type is NodePort
   # Annotations to add to the service
@@ -27,7 +27,7 @@ service:
 # Enabling this will publicly expose your zot server
 # Only enable this if you have security enabled on your cluster
 ingress:
-  enabled: false
+  enabled: true
   annotations: {}
   # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
@@ -39,7 +39,7 @@ ingress:
   className: "traefik"
   pathtype: ImplementationSpecific
   hosts:
-    - host: chart.pangarabbit.com
+    - host: zot.pangarabbit.com
       paths:
         - path: /
   tls: []
@@ -150,7 +150,7 @@ pvc:
   # Size of the volume requested
   storage: 8Gi
   # Name of the storage class to use if it is different than the default one
-  storageClassName: nfs-csi-default
+  storageClassName: "-"
 # List of environment variables to set on the container
 env:
 # - name: "TEST"
