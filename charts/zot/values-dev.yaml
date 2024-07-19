@@ -141,7 +141,7 @@ pvc:
   # Make the chart create the PVC, this option is used with storageClasses that
   # can create volumes dynamically, if that is not the case is better to do it
   # manually and set create to false
-  create: false
+  create: true
   # Name of the PVC to use or create if persistence is enabled, if not set the
   # value '$CHART_RELEASE-pvc' is used
   name: null
