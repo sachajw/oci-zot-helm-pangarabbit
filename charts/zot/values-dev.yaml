@@ -150,7 +150,7 @@ pvc:
   # Size of the volume requested
   storage: 8Gi
   # Name of the storage class to use if it is different than the default one
-  storageClassName: "-"
+  storageClassName: ""
 # List of environment variables to set on the container
 env:
 # - name: "TEST"
